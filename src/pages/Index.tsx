@@ -603,16 +603,18 @@ export default function Index() {
               </div>
 
               <div className="flex gap-3 mt-8">
-                {[
-                  { icon: 'MessageCircle', label: 'WhatsApp' },
-                  { icon: 'Send', label: 'Telegram' },
-                  { icon: 'Phone', label: 'Позвонить' },
-                ].map(s => (
-                  <button key={s.label} className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
-                    <Icon name={s.icon as Parameters<typeof Icon>[0]['name']} size={15} />
-                    {s.label}
-                  </button>
-                ))}
+                <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                  <Icon name="MessageCircle" size={15} />
+                  WhatsApp
+                </a>
+                <a href="https://t.me/+79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                  <Icon name="Send" size={15} />
+                  Telegram
+                </a>
+                <a href="tel:+79002379757" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                  <Icon name="Phone" size={15} />
+                  Позвонить
+                </a>
               </div>
             </div>
 
