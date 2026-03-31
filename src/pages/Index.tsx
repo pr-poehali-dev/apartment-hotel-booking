@@ -124,7 +124,7 @@ export default function Index() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="#" className="font-cormorant text-2xl font-bold tracking-widest text-gold uppercase">
-            ALTA<span className="text-foreground mx-1">·</span>APART
+            AURA<span className="text-foreground mx-1">·</span>APART
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -181,7 +181,7 @@ export default function Index() {
             <div className="animate-fade-in-up">
               <span className="inline-flex items-center gap-2 text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em] mb-6 border border-gold/30 px-4 py-2 rounded-full bg-gold/5">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                Апарт-отель премиум класса
+                Апарт-отель «AURA»
               </span>
             </div>
 
@@ -622,7 +622,7 @@ export default function Index() {
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
                 </div>
-                <div className="font-cormorant text-2xl font-semibold text-foreground">ALTA APART</div>
+                <div className="font-cormorant text-2xl font-semibold text-foreground">AURA APART</div>
                 <div className="font-golos text-sm text-muted-foreground mt-1">ул. Тверская, 15</div>
                 <button className="mt-4 text-xs font-golos font-medium text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold/10 transition-colors">
                   Открыть карту
@@ -637,7 +637,7 @@ export default function Index() {
       <footer className="border-t border-border py-8 bg-background">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-cormorant text-xl font-bold tracking-widest text-gold uppercase">
-            ALTA<span className="text-foreground mx-1">·</span>APART
+            AURA<span className="text-foreground mx-1">·</span>APART
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             {NAV_LINKS.map(l => (
@@ -647,7 +647,7 @@ export default function Index() {
             ))}
           </div>
           <div className="font-golos text-xs text-muted-foreground">
-            © 2026 ALTA APART. Все права защищены.
+            © 2026 AURA APART. Все права защищены.
           </div>
         </div>
       </footer>
