@@ -7,7 +7,7 @@ const HERO_IMAGE = 'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-287
 const ROOMS = [
   {
     id: 1,
-    name: 'Студио',
+    name: 'Стандарт',
     area: '32 м²',
     price: 4200,
     capacity: 2,
@@ -18,7 +18,7 @@ const ROOMS = [
   },
   {
     id: 2,
-    name: 'Апартаменты 1BR',
+    name: 'Комфорт',
     area: '52 м²',
     price: 6800,
     capacity: 3,
@@ -29,7 +29,7 @@ const ROOMS = [
   },
   {
     id: 3,
-    name: 'Пентхаус 2BR',
+    name: 'Люкс',
     area: '95 м²',
     price: 12500,
     capacity: 5,
