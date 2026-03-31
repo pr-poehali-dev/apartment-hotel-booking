@@ -97,6 +97,9 @@ export default function Index() {
   const [guests, setGuests] = useState(1);
   const [activeGallery, setActiveGallery] = useState<number | null>(null);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', comment: '' });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -116,6 +119,44 @@ export default function Index() {
 
   const selectedRoomData = ROOMS.find(r => r.id === selectedRoom);
   const totalPrice = selectedRoomData ? selectedRoomData.price * getNights() : 0;
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.phone) {
+      setSendError('Пожалуйста, заполните имя и телефон');
+      return;
+    }
+    setSending(true);
+    setSendError('');
+    try {
+      const res = await fetch('https://functions.poehali.dev/2f179cf3-3807-4d44-a6c4-7b91d8c39e8d', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          comment: formData.comment,
+          room: selectedRoomData?.name || '',
+          checkIn: checkIn ? checkIn.toLocaleDateString('ru-RU') : '',
+          checkOut: checkOut ? checkOut.toLocaleDateString('ru-RU') : '',
+          nights: getNights() || '',
+          guests,
+          total: totalPrice || '',
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+        setFormData({ name: '', phone: '', email: '', comment: '' });
+      } else {
+        setSendError('Ошибка отправки. Попробуйте позвонить нам.');
+      }
+    } catch {
+      setSendError('Ошибка соединения. Попробуйте позвонить нам.');
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -422,10 +463,27 @@ export default function Index() {
                 </div>
               )}
 
-              <button className="w-full bg-gold text-black font-golos font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] glow-gold flex items-center justify-center gap-2">
-                <Icon name="CalendarCheck" size={18} />
-                Отправить заявку
-              </button>
+              {sendError && (
+                <p className="text-red-400 text-xs font-golos text-center">{sendError}</p>
+              )}
+
+              {sent ? (
+                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+                  <div className="font-cormorant text-xl font-semibold text-green-400 mb-1">Заявка отправлена!</div>
+                  <p className="font-golos text-xs text-muted-foreground">Мы свяжемся с вами в течение 15 минут.</p>
+                  <button onClick={() => setSent(false)} className="mt-3 text-xs font-golos text-gold underline">Отправить ещё раз</button>
+                </div>
+              ) : (
+                <button
+                  onClick={handleSubmit}
+                  disabled={sending}
+                  className="w-full bg-gold text-black font-golos font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] glow-gold flex items-center justify-center gap-2 disabled:opacity-60 disabled:scale-100"
+                >
+                  <Icon name={sending ? 'Loader' : 'CalendarCheck'} size={18} className={sending ? 'animate-spin' : ''} />
+                  {sending ? 'Отправляем...' : 'Отправить заявку'}
+                </button>
+              )}
+
               <p className="text-xs font-golos text-muted-foreground text-center">
                 Без предоплаты. Менеджер свяжется в течение 15 минут.
               </p>
