@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
-import BookingCalendar from '@/components/BookingCalendar';
+import HomeReserveWidget from '@/components/HomeReserveWidget';
 
 const HERO_IMAGE = 'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/1c75a32b-3a35-4c69-a1e1-3b57bb043339.jpg';
 
@@ -468,7 +468,6 @@ export default function Index() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold/5 blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-cyan/5 blur-3xl" />
-
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="mb-14">
             <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Онлайн бронирование</span>
@@ -477,142 +476,7 @@ export default function Index() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <div className="mb-4">
-                <p className="text-sm font-golos text-muted-foreground mb-1">
-                  {!checkIn ? '① Выберите дату заезда' : !checkOut ? '② Выберите дату выезда' : '✓ Даты выбраны'}
-                </p>
-                <p className="text-xs font-golos text-muted-foreground/60">Зачёркнутые даты — уже заняты</p>
-              </div>
-              <BookingCalendar onDatesSelected={(ci, co) => { setCheckIn(ci); setCheckOut(co); }} />
-            </div>
-
-            <div className="bg-hotel-card border border-border rounded-2xl p-6 space-y-5">
-              <h3 className="font-cormorant text-2xl font-semibold text-foreground">Детали бронирования</h3>
-
-              <div>
-                <label className="block text-xs font-golos font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                  Тип номера
-                </label>
-                <div className="space-y-2">
-                  {ROOMS.map(room => (
-                    <label
-                      key={room.id}
-                      className={`flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-all ${
-                        selectedRoom === room.id
-                          ? 'border-gold bg-gold/10'
-                          : 'border-border hover:border-gold/40'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <input
-                          type="radio"
-                          name="room"
-                          value={room.id}
-                          checked={selectedRoom === room.id}
-                          onChange={() => setSelectedRoom(room.id)}
-                          className="accent-gold"
-                        />
-                        <div>
-                          <div className="font-golos text-sm font-medium text-foreground">{room.name}</div>
-                          <div className="font-golos text-xs text-muted-foreground">{room.area} · до {room.capacity} гостей</div>
-                        </div>
-                      </div>
-                      <span className="font-cormorant text-lg font-bold text-gold">{room.price.toLocaleString('ru-RU')} ₽</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-golos font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                  Гостей
-                </label>
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => setGuests(g => Math.max(1, g - 1))}
-                    className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-gold transition-colors text-foreground"
-                  >
-                    <Icon name="Minus" size={14} />
-                  </button>
-                  <span className="font-cormorant text-2xl font-semibold text-foreground w-8 text-center">{guests}</span>
-                  <button
-                    onClick={() => setGuests(g => Math.min(5, g + 1))}
-                    className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-gold transition-colors text-foreground"
-                  >
-                    <Icon name="Plus" size={14} />
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-3">
-                <input
-                  placeholder="Ваше имя"
-                  value={formData.name}
-                  onChange={e => setFormData(f => ({ ...f, name: e.target.value }))}
-                  className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm font-golos text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                />
-                <input
-                  placeholder="Телефон"
-                  value={formData.phone}
-                  onChange={e => setFormData(f => ({ ...f, phone: e.target.value }))}
-                  className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm font-golos text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                />
-                <input
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={e => setFormData(f => ({ ...f, email: e.target.value }))}
-                  className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm font-golos text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors"
-                />
-                <textarea
-                  placeholder="Пожелания (необязательно)"
-                  value={formData.comment}
-                  onChange={e => setFormData(f => ({ ...f, comment: e.target.value }))}
-                  rows={2}
-                  className="w-full bg-input border border-border rounded-xl px-4 py-3 text-sm font-golos text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold transition-colors resize-none"
-                />
-              </div>
-
-              {getNights() > 0 && selectedRoom && (
-                <div className="bg-gold/10 border border-gold/30 rounded-xl p-4 space-y-2">
-                  <div className="flex justify-between text-sm font-golos">
-                    <span className="text-muted-foreground">{selectedRoomData?.name}</span>
-                    <span className="text-foreground">{selectedRoomData?.price.toLocaleString('ru-RU')} ₽ × {getNights()} ночей</span>
-                  </div>
-                  <div className="flex justify-between font-golos border-t border-gold/20 pt-2">
-                    <span className="text-sm font-semibold text-foreground">Итого</span>
-                    <span className="text-gold font-cormorant text-2xl font-bold">{totalPrice.toLocaleString('ru-RU')} ₽</span>
-                  </div>
-                </div>
-              )}
-
-              {sendError && (
-                <p className="text-red-400 text-xs font-golos text-center">{sendError}</p>
-              )}
-
-              {sent ? (
-                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
-                  <div className="font-cormorant text-xl font-semibold text-green-400 mb-1">Заявка отправлена!</div>
-                  <p className="font-golos text-xs text-muted-foreground">Мы свяжемся с вами в течение 15 минут.</p>
-                  <button onClick={() => setSent(false)} className="mt-3 text-xs font-golos text-gold underline">Отправить ещё раз</button>
-                </div>
-              ) : (
-                <button
-                  onClick={handleSubmit}
-                  disabled={sending}
-                  className="w-full bg-gold text-black font-golos font-semibold py-4 rounded-xl hover:opacity-90 transition-all hover:scale-[1.02] glow-gold flex items-center justify-center gap-2 disabled:opacity-60 disabled:scale-100"
-                >
-                  <Icon name={sending ? 'Loader' : 'CalendarCheck'} size={18} className={sending ? 'animate-spin' : ''} />
-                  {sending ? 'Отправляем...' : 'Отправить заявку'}
-                </button>
-              )}
-
-              <p className="text-xs font-golos text-muted-foreground text-center">
-                Без предоплаты. Менеджер свяжется в течение 15 минут.
-              </p>
-            </div>
-          </div>
+          <HomeReserveWidget />
         </div>
       </section>
 
