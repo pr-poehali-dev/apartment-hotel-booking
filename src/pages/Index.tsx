@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import BookingCalendar from '@/components/BookingCalendar';
 
-const HERO_IMAGE = 'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/1ac27bd6-09f3-44f4-beef-f5e263034e3d.jpg';
+const HERO_IMAGE = 'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/1c75a32b-3a35-4c69-a1e1-3b57bb043339.jpg';
 
 const ROOMS = [
   {
