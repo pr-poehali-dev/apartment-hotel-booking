@@ -322,7 +322,7 @@ export default function Index() {
               города
             </h1>
 
-            <p className="font-golos text-base md:text-lg text-muted-foreground mt-6 mb-10 leading-relaxed max-w-xl animate-fade-in-up-delay-2">
+            <p className="font-golos text-base md:text-lg mt-6 mb-10 leading-relaxed max-w-xl animate-fade-in-up-delay-2 text-yellow-500">
               Комфортные апартаменты с кухней. Пространство, созданное для тех, кто ценит время и комфорт.
             </p>
 
@@ -370,7 +370,7 @@ export default function Index() {
             <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
               Выберите <em className="text-gold not-italic">пространство</em>
             </h2>
-            <p className="font-golos text-muted-foreground mt-3 max-w-xl">
+            <p className="font-golos mt-3 max-w-xl text-slate-900">
               Каждый апартамент оснащён всем необходимым для комфортного проживания — от уютного студио до просторного пентхауса.
             </p>
           </div>
@@ -464,10 +464,10 @@ export default function Index() {
       </section>
 
       {/* BOOKING */}
-      <section id="booking" className="py-24 bg-muted/30 relative overflow-hidden">
+      <section id="booking" className="py-24 relative overflow-hidden bg-slate-400">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold/5 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-cyan/5 blur-3xl" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl bg-slate-400" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl bg-slate-500" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="mb-14">
             <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Онлайн бронирование</span>
@@ -509,7 +509,7 @@ export default function Index() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="py-24 bg-muted/20 relative overflow-hidden">
+      <section id="gallery" className="py-24 relative overflow-hidden bg-slate-400">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
@@ -568,7 +568,7 @@ export default function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-24 bg-background">
+      <section id="reviews" className="py-24 bg-slate-400">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
@@ -577,7 +577,7 @@ export default function Index() {
                 Что говорят <em className="text-gold not-italic">гости</em>
               </h2>
             </div>
-            <div className="flex items-center gap-3 bg-gold/10 border border-gold/30 rounded-2xl px-5 py-3">
+            <div className="flex items-center gap-3 border border-gold/30 rounded-2xl px-5 py-3 bg-gray-900">
               <div>
                 <div className="font-cormorant text-4xl font-bold text-gold">4.9</div>
                 <div className="flex gap-0.5 mt-1">
@@ -617,7 +617,7 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-24 bg-muted/20 relative overflow-hidden">
+      <section id="contacts" className="py-24 relative overflow-hidden bg-slate-400">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute -top-40 left-1/2 w-96 h-96 rounded-full bg-gold/5 blur-3xl -translate-x-1/2" />
 
@@ -642,22 +642,22 @@ export default function Index() {
                     </div>
                     <div>
                       <div className="font-golos text-xs text-muted-foreground uppercase tracking-wider mb-0.5">{c.label}</div>
-                      <div className="font-golos text-sm font-medium text-foreground">{c.value}</div>
+                      <div className="font-golos text-sm font-medium text-foreground bg-slate-400">{c.value}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="flex gap-3 mt-8">
-                <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
                   <Icon name="MessageCircle" size={15} />
                   WhatsApp
                 </a>
-                <a href="https://t.me/+79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                <a href="https://t.me/+79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
                   <Icon name="Send" size={15} />
                   Telegram
                 </a>
-                <a href="tel:+79002379757" className="flex items-center gap-2 border border-border text-sm font-golos font-medium text-muted-foreground px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors">
+                <a href="tel:+79002379757" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
                   <Icon name="Phone" size={15} />
                   Позвонить
                 </a>
@@ -665,12 +665,12 @@ export default function Index() {
             </div>
 
             <div className="bg-hotel-card border border-border rounded-2xl overflow-hidden h-80 flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-cyan/5" />
+              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-50" />
               <div className="text-center relative">
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
                 </div>
-                <div className="font-cormorant text-2xl font-semibold text-foreground">AURA APART</div>
+                <div className="font-cormorant text-2xl font-semibold text-foreground bg-slate-400">AURA APART</div>
                 <div className="font-golos text-sm text-muted-foreground mt-1">Сочи, ул. Навагинская 11Б</div>
                 <button className="mt-4 text-xs font-golos font-medium text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold/10 transition-colors">
                   Открыть карту
