@@ -19,7 +19,7 @@ const ROOMS = [
   {
     id: 2,
     name: 'Комфорт',
-    area: '52 м²',
+    area: 'от 25 м²',
     price: 6800,
     capacity: 3,
     image: HERO_IMAGE,
