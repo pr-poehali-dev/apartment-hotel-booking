@@ -12,6 +12,14 @@ const ROOMS = [
     price: 4200,
     capacity: 2,
     image: HERO_IMAGE,
+    images: [
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/788c9c4b-3157-46c3-9b45-1810f6240563.jpg',
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/f091cd28-3fa8-4f18-8ef2-6ece8144e8e0.jpg',
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/3b347789-ea5e-4a1f-a3e8-3bd7bc74abe8.jpg',
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/2a2e4410-6b1f-41cd-a97f-9c10483065eb.jpg',
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/40e5174c-d737-424b-a5fd-96fc4b3e833b.jpg',
+      'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/6bff3eb2-9bff-4424-9cff-3c647f45b468.jpg',
+    ],
     features: ['Панорамное окно', 'Kitchenette', 'Smart TV'],
     badge: 'Популярный',
     badgeColor: 'bg-gold text-black',
@@ -107,6 +115,7 @@ export default function Index() {
   const [selectedRoom, setSelectedRoom] = useState<number | null>(null);
   const [guests, setGuests] = useState(1);
   const [activeGallery, setActiveGallery] = useState<number | null>(null);
+  const [roomSlides, setRoomSlides] = useState<Record<number, number>>({});
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', comment: '' });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -305,12 +314,46 @@ export default function Index() {
                 onClick={() => scrollTo('#booking')}
               >
                 <div className="relative overflow-hidden h-52">
-                  <img
-                    src={room.image}
-                    alt={room.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  {(() => {
+                    const imgs = (room as typeof ROOMS[0] & { images?: string[] }).images;
+                    const slideIndex = roomSlides[room.id] || 0;
+                    const src = imgs ? imgs[slideIndex] : room.image;
+                    return (
+                      <>
+                        <img
+                          src={src}
+                          alt={room.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        {imgs && imgs.length > 1 && (
+                          <>
+                            <button
+                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-7 h-7 flex items-center justify-center z-10 transition-colors"
+                              onClick={e => { e.stopPropagation(); setRoomSlides(s => ({ ...s, [room.id]: (slideIndex - 1 + imgs.length) % imgs.length })); }}
+                            >
+                              <Icon name="ChevronLeft" size={14} />
+                            </button>
+                            <button
+                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full w-7 h-7 flex items-center justify-center z-10 transition-colors"
+                              onClick={e => { e.stopPropagation(); setRoomSlides(s => ({ ...s, [room.id]: (slideIndex + 1) % imgs.length })); }}
+                            >
+                              <Icon name="ChevronRight" size={14} />
+                            </button>
+                            <div className="absolute bottom-12 left-0 right-0 flex justify-center gap-1 z-10">
+                              {imgs.map((_: string, idx: number) => (
+                                <button
+                                  key={idx}
+                                  className={`w-1.5 h-1.5 rounded-full transition-colors ${idx === slideIndex ? 'bg-white' : 'bg-white/40'}`}
+                                  onClick={e => { e.stopPropagation(); setRoomSlides(s => ({ ...s, [room.id]: idx })); }}
+                                />
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </>
+                    );
+                  })()}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
                   <span className={`absolute top-4 right-4 text-xs font-golos font-semibold px-3 py-1 rounded-full ${room.badgeColor}`}>
                     {room.badge}
                   </span>
