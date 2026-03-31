@@ -38,6 +38,17 @@ const ROOMS = [
     badge: 'Люкс',
     badgeColor: 'bg-primary text-primary-foreground',
   },
+  {
+    id: 4,
+    name: 'Двухэтажный люкс',
+    area: '140 м²',
+    price: 18900,
+    capacity: 6,
+    image: HERO_IMAGE,
+    features: ['2 этажа', 'Терраса', 'Личный butler'],
+    badge: 'Эксклюзив',
+    badgeColor: 'bg-gold text-black',
+  },
 ];
 
 const SERVICES = [
