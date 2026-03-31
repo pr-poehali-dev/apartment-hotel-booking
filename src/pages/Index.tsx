@@ -244,7 +244,7 @@ export default function Index() {
             </h1>
 
             <p className="font-golos text-base md:text-lg text-muted-foreground mt-6 mb-10 leading-relaxed max-w-xl animate-fade-in-up-delay-2">
-              Апартаменты с панорамным видом на город. Пространство, созданное для тех, кто ценит время и комфорт.
+              Комфортные апартаменты с кухней. Пространство, созданное для тех, кто ценит время и комфорт.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up-delay-3">
