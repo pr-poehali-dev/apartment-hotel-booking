@@ -30,7 +30,7 @@ const ROOMS = [
   {
     id: 3,
     name: 'Люкс',
-    area: '95 м²',
+    area: 'от 27 м²',
     price: 12500,
     capacity: 5,
     image: HERO_IMAGE,
@@ -41,7 +41,7 @@ const ROOMS = [
   {
     id: 4,
     name: 'Двухэтажный люкс',
-    area: '140 м²',
+    area: '35 м²',
     price: 18900,
     capacity: 6,
     image: HERO_IMAGE,
