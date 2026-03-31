@@ -8,7 +8,7 @@ const ROOMS = [
   {
     id: 1,
     name: 'Стандарт',
-    area: '32 м²',
+    area: 'от 20 м²',
     price: 4200,
     capacity: 2,
     image: HERO_IMAGE,
