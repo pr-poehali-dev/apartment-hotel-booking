@@ -363,7 +363,7 @@ export default function Index() {
       </section>
 
       {/* ROOMS */}
-      <section id="rooms" className="py-24 bg-background">
+      <section id="rooms" className="py-24 bg-slate-400">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
             <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Наши номера</span>
