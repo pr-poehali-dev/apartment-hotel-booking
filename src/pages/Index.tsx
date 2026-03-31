@@ -585,9 +585,9 @@ export default function Index() {
 
               <div className="space-y-5">
                 {[
-                  { icon: 'MapPin', label: 'Адрес', value: 'ул. Тверская, 15, Москва' },
-                  { icon: 'Phone', label: 'Телефон', value: '+7 (495) 123-45-67' },
-                  { icon: 'Mail', label: 'Email', value: 'info@alta-apart.ru' },
+                  { icon: 'MapPin', label: 'Адрес', value: 'Сочи, ул. Навагинская 11Б' },
+                  { icon: 'Phone', label: 'Телефон', value: '8 (900) 237-97-57' },
+                  { icon: 'Mail', label: 'Email', value: 'orangeapart@mail.ru' },
                   { icon: 'Clock', label: 'Ресепшн', value: '24/7 без выходных' },
                 ].map(c => (
                   <div key={c.icon} className="flex items-start gap-4">
@@ -623,7 +623,7 @@ export default function Index() {
                   <Icon name="MapPin" size={28} className="text-gold" />
                 </div>
                 <div className="font-cormorant text-2xl font-semibold text-foreground">AURA APART</div>
-                <div className="font-golos text-sm text-muted-foreground mt-1">ул. Тверская, 15</div>
+                <div className="font-golos text-sm text-muted-foreground mt-1">Сочи, ул. Навагинская 11Б</div>
                 <button className="mt-4 text-xs font-golos font-medium text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold/10 transition-colors">
                   Открыть карту
                 </button>
