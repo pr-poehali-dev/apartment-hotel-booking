@@ -9,7 +9,7 @@ const ROOMS = [
     id: 1,
     name: 'Стандарт',
     area: 'от 20 м²',
-    price: 4200,
+    price: 2500,
     capacity: 2,
     image: HERO_IMAGE,
     images: [
@@ -29,8 +29,8 @@ const ROOMS = [
     id: 2,
     name: 'Комфорт',
     area: 'от 25 м²',
-    price: 6800,
-    capacity: 3,
+    price: 3000,
+    capacity: 4,
     image: HERO_IMAGE,
     images: [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/3b347789-ea5e-4a1f-a3e8-3bd7bc74abe8.jpg',
@@ -46,7 +46,7 @@ const ROOMS = [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/74d7d8bd-555e-4afb-b9b8-346c8af16dca.jpg',
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/1ac27bd6-09f3-44f4-beef-f5e263034e3d.jpg',
     ],
-    features: ['Отдельная спальня', 'Полная кухня', 'Рабочая зона'],
+    features: ['Дополнительный диван', 'Полная кухня', 'Smart TV'],
     badge: 'Бизнес',
     badgeColor: 'bg-cyan text-black',
   },
@@ -54,8 +54,8 @@ const ROOMS = [
     id: 3,
     name: 'Люкс',
     area: 'от 27 м²',
-    price: 12500,
-    capacity: 5,
+    price: 3500,
+    capacity: 4,
     image: HERO_IMAGE,
     images: [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/a5206fd1-2e67-4328-91f2-8b87b7ae537f.jpg',
@@ -69,7 +69,7 @@ const ROOMS = [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/68bd80f7-0261-4821-ba64-86184dc166bf.jpg',
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/5241e65e-9754-4b7e-8769-f1a85c2bbb55.jpg',
     ],
-    features: ['Вид на город 270°', '2 спальни', 'Джакузи'],
+    features: ['Полноценная кухня', 'Дополнительный диван', 'Smart TV'],
     badge: 'Люкс',
     badgeColor: 'bg-primary text-primary-foreground',
   },
@@ -77,8 +77,8 @@ const ROOMS = [
     id: 4,
     name: 'Двухэтажный люкс',
     area: '35 м²',
-    price: 18900,
-    capacity: 6,
+    price: 4000,
+    capacity: 5,
     image: HERO_IMAGE,
     images: [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/d37daa83-530b-47ad-8963-63529e22397b.jpg',
@@ -93,21 +93,10 @@ const ROOMS = [
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/6bff3eb2-9bff-4424-9cff-3c647f45b468.jpg',
       'https://cdn.poehali.dev/projects/6d5c4aaf-86de-49be-8f22-28732051ccd7/bucket/d0da59a6-2c50-4f9c-8cb5-3162c762ef95.jpg',
     ],
-    features: ['2 этажа', 'Терраса', 'Личный butler'],
+    features: ['2 этажа', 'Высокие потолки', 'Smart TV'],
     badge: 'Эксклюзив',
     badgeColor: 'bg-gold text-black',
   },
-];
-
-const SERVICES = [
-  { icon: 'Wifi', title: 'Высокоскоростной Wi-Fi', desc: 'До 500 Мбит/с во всех апартаментах' },
-  { icon: 'Car', title: 'Паркинг', desc: 'Подземный паркинг с видеонаблюдением' },
-  { icon: 'UtensilsCrossed', title: 'Завтрак', desc: 'Континентальный завтрак до 11:00' },
-  { icon: 'Dumbbell', title: 'Фитнес-зал', desc: 'Тренажёрный зал 24/7' },
-  { icon: 'Wind', title: 'Климат-контроль', desc: 'Индивидуальный климат в каждом номере' },
-  { icon: 'ShieldCheck', title: 'Охрана 24/7', desc: 'Круглосуточная служба безопасности' },
-  { icon: 'Shirt', title: 'Прачечная', desc: 'Прачечная и химчистка' },
-  { icon: 'ConciergeBell', title: 'Консьерж', desc: 'Помощь в организации досуга и трансферов' },
 ];
 
 const GALLERY = [
@@ -171,7 +160,6 @@ const REVIEWS = [
 const NAV_LINKS = [
   { label: 'Номера', href: '#rooms' },
   { label: 'Бронирование', href: '#booking' },
-  { label: 'Услуги', href: '#services' },
   { label: 'Галерея', href: '#gallery' },
   { label: 'Отзывы', href: '#reviews' },
   { label: 'Контакты', href: '#contacts' },
@@ -344,7 +332,7 @@ export default function Index() {
             </div>
 
             <div className="flex gap-8 mt-12 animate-fade-in-up-delay-3">
-              {[['150+', 'Апартаментов'], ['4.9', 'Рейтинг'], ['2 000+', 'Гостей']].map(([n, l]) => (
+              {[['15+', 'Апартаментов'], ['4.9', 'Рейтинг'], ['2 000+', 'Гостей']].map(([n, l]) => (
                 <div key={l}>
                   <div className="font-cormorant text-3xl font-bold text-gold">{n}</div>
                   <div className="font-golos text-xs text-muted-foreground uppercase tracking-wider mt-0.5">{l}</div>
@@ -377,7 +365,7 @@ export default function Index() {
             {ROOMS.map((room, i) => (
               <div
                 key={room.id}
-                className="bg-hotel-card border border-border rounded-2xl overflow-hidden card-hover cursor-pointer group"
+                className="bg-[#3C3C3C] border border-[#4a4a4a] rounded-2xl overflow-hidden card-hover cursor-pointer group"
                 style={{ animationDelay: `${i * 0.1}s` }}
                 onClick={() => scrollTo('#booking')}
               >
@@ -434,21 +422,22 @@ export default function Index() {
                 <div className="p-5">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {room.features.map(f => (
-                      <span key={f} className="text-xs font-golos text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
+                      <span key={f} className="text-xs font-golos text-gray-300 bg-[#4a4a4a] px-2.5 py-1 rounded-full">
                         {f}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-1 mb-4 text-muted-foreground">
+                  <div className="flex items-center gap-1 mb-4 text-gray-400">
                     <Icon name="Users" size={14} />
                     <span className="text-xs font-golos">до {room.capacity} гостей</span>
                   </div>
 
                   <div className="flex items-end justify-between">
                     <div>
+                      <span className="font-golos text-xs text-gray-400 mr-1">от</span>
                       <span className="font-cormorant text-3xl font-bold text-gold">{room.price.toLocaleString('ru-RU')}</span>
-                      <span className="font-golos text-xs text-muted-foreground ml-1">₽ / ночь</span>
+                      <span className="font-golos text-xs text-gray-400 ml-1">₽ / ночь</span>
                     </div>
                     <button className="bg-gold text-black text-xs font-golos font-semibold px-4 py-2 rounded-full hover:opacity-90 transition-opacity">
                       Выбрать
@@ -462,7 +451,7 @@ export default function Index() {
       </section>
 
       {/* BOOKING */}
-      <section id="booking" className="py-24 relative overflow-hidden bg-[#ffffff]">
+      <section id="booking" className="py-36 relative overflow-hidden bg-[#ffffff]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl bg-[#ffffff]" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl bg-[#ffffff]" />
@@ -474,37 +463,13 @@ export default function Index() {
             </h2>
           </div>
 
-          <HomeReserveWidget />
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-14">
-            <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Инфраструктура</span>
-            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
-              Всё включено <em className="text-gold not-italic">в стоимость</em>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {SERVICES.map((s, i) => (
-              <div
-                key={s.title}
-                className="bg-hotel-card border border-border rounded-2xl p-5 hover:border-gold/40 transition-all hover:-translate-y-1 group"
-                style={{ animationDelay: `${i * 0.05}s` }}
-              >
-                <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-4 group-hover:bg-gold/20 transition-colors">
-                  <Icon name={s.icon as Parameters<typeof Icon>[0]['name']} size={20} className="text-gold" />
-                </div>
-                <div className="font-golos text-sm font-semibold text-foreground mb-1">{s.title}</div>
-                <div className="font-golos text-xs text-muted-foreground leading-relaxed">{s.desc}</div>
-              </div>
-            ))}
+          <div className="min-h-[450px]">
+            <HomeReserveWidget />
           </div>
         </div>
       </section>
+
+
 
       {/* GALLERY */}
       <section id="gallery" className="py-24 relative overflow-hidden bg-[#ffffff]">
@@ -632,44 +597,42 @@ export default function Index() {
                   { icon: 'MapPin', label: 'Адрес', value: 'Сочи, ул. Навагинская 11Б' },
                   { icon: 'Phone', label: 'Телефон', value: '8 (900) 237-97-57' },
                   { icon: 'Mail', label: 'Email', value: 'orangeapart@mail.ru' },
-                  { icon: 'Clock', label: 'Ресепшн', value: '24/7 без выходных' },
                 ].map(c => (
                   <div key={c.icon} className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
                       <Icon name={c.icon as Parameters<typeof Icon>[0]['name']} size={18} className="text-gold" />
                     </div>
                     <div>
-                      <div className="font-golos text-xs text-muted-foreground uppercase tracking-wider mb-0.5">{c.label}</div>
-                      <div className="font-golos text-sm font-medium text-foreground bg-slate-400">{c.value}</div>
+                      <div className="font-golos text-xs text-[#4a4a4a] uppercase tracking-wider mb-0.5">{c.label}</div>
+                      <div className="font-golos text-sm font-medium text-[#3C3C3C]">{c.value}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               <div className="flex gap-3 mt-8">
-                <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
+                <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors">
                   <Icon name="MessageCircle" size={15} />
                   WhatsApp
                 </a>
-                <a href="https://t.me/+79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
+                <a href="https://t.me/+79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors">
                   <Icon name="Send" size={15} />
                   Telegram
                 </a>
-                <a href="tel:+79002379757" className="flex items-center gap-2 border border-border text-sm font-golos font-medium px-4 py-2.5 rounded-full hover:border-gold hover:text-gold transition-colors text-slate-900">
+                <a href="tel:+79002379757" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors">
                   <Icon name="Phone" size={15} />
                   Позвонить
                 </a>
               </div>
             </div>
 
-            <div className="bg-hotel-card border border-border rounded-2xl overflow-hidden h-80 flex items-center justify-center relative">
-              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-400" />
+            <div className="border border-gray-200 rounded-2xl overflow-hidden h-80 flex items-center justify-center relative bg-gray-50">
               <div className="text-center relative">
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
                 </div>
-                <div className="font-cormorant text-2xl font-semibold text-foreground bg-transparent">AURA APART</div>
-                <div className="font-golos text-sm text-muted-foreground mt-1 bg-transparent">Сочи, ул. Навагинская 11Б</div>
+                <div className="font-cormorant text-2xl font-semibold text-[#3C3C3C]">AURA APART</div>
+                <div className="font-golos text-sm text-[#3C3C3C] mt-1">Сочи, ул. Навагинская 11Б</div>
                 <button className="mt-4 text-xs font-golos font-medium text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold/10 transition-colors">
                   Открыть карту
                 </button>
