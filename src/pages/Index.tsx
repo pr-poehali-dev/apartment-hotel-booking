@@ -322,7 +322,7 @@ export default function Index() {
               города
             </h1>
 
-            <p className="font-golos text-base md:text-lg mt-6 mb-10 leading-relaxed max-w-xl animate-fade-in-up-delay-2 text-yellow-500">
+            <p className="font-golos text-base md:text-lg mt-6 mb-10 leading-relaxed max-w-xl animate-fade-in-up-delay-2 text-[#ffffff]">
               Комфортные апартаменты с кухней. Пространство, созданное для тех, кто ценит время и комфорт.
             </p>
 
@@ -363,16 +363,14 @@ export default function Index() {
       </section>
 
       {/* ROOMS */}
-      <section id="rooms" className="py-24 bg-slate-400">
+      <section id="rooms" className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
             <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Наши номера</span>
-            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
+            <h2 className="font-cormorant text-5xl md:text-6xl font-light mt-2 text-gray-900">
               Выберите <em className="text-gold not-italic">пространство</em>
             </h2>
-            <p className="font-golos mt-3 max-w-xl text-slate-900">
-              Каждый апартамент оснащён всем необходимым для комфортного проживания — от уютного студио до просторного пентхауса.
-            </p>
+            <p className="font-golos mt-3 max-w-xl text-slate-900">Каждый апартамент оснащён всем необходимым для комфортного проживания — от уютного студио до просторного люкса.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -464,14 +462,14 @@ export default function Index() {
       </section>
 
       {/* BOOKING */}
-      <section id="booking" className="py-24 relative overflow-hidden bg-slate-400">
+      <section id="booking" className="py-24 relative overflow-hidden bg-[#ffffff]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl bg-slate-400" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl bg-slate-500" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl bg-[#ffffff]" />
+        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl bg-[#ffffff]" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="mb-14">
             <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Онлайн бронирование</span>
-            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
+            <h2 className="font-cormorant text-5xl md:text-6xl font-light mt-2 text-slate-900">
               Забронируйте <em className="text-gold not-italic">сейчас</em>
             </h2>
           </div>
@@ -509,12 +507,12 @@ export default function Index() {
       </section>
 
       {/* GALLERY */}
-      <section id="gallery" className="py-24 relative overflow-hidden bg-slate-400">
+      <section id="gallery" className="py-24 relative overflow-hidden bg-[#ffffff]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/30 to-transparent" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14">
-            <span className="text-cyan text-xs font-golos font-semibold uppercase tracking-[0.25em]">Интерьеры</span>
-            <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
+            <span className="text-xs font-golos font-semibold uppercase tracking-[0.25em] text-yellow-400">Интерьеры</span>
+            <h2 className="font-cormorant text-5xl md:text-6xl font-light mt-2 text-slate-900">
               Галерея
             </h2>
           </div>
@@ -568,16 +566,16 @@ export default function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-24 bg-slate-400">
+      <section id="reviews" className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Отзывы</span>
-              <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2">
+              <h2 className="font-cormorant text-5xl md:text-6xl font-light mt-2 text-slate-900">
                 Что говорят <em className="text-gold not-italic">гости</em>
               </h2>
             </div>
-            <div className="flex items-center gap-3 border border-gold/30 rounded-2xl px-5 py-3 bg-gray-900">
+            <div className="flex items-center gap-3 border border-gold/30 rounded-2xl px-5 py-3 bg-slate-900">
               <div>
                 <div className="font-cormorant text-4xl font-bold text-gold">4.9</div>
                 <div className="flex gap-0.5 mt-1">
@@ -594,7 +592,7 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="bg-hotel-card border border-border rounded-2xl p-6 hover:border-gold/30 transition-all">
+              <div key={i} className="border border-border rounded-2xl p-6 hover:border-gold/30 transition-all bg-slate-900">
                 <div className="flex gap-1 mb-4">
                   {[...Array(r.stars)].map((_, j) => (
                     <Icon key={j} name="Star" size={14} className="text-gold fill-current" />
@@ -617,7 +615,7 @@ export default function Index() {
       </section>
 
       {/* CONTACTS */}
-      <section id="contacts" className="py-24 relative overflow-hidden bg-slate-400">
+      <section id="contacts" className="py-24 relative overflow-hidden bg-[#ffffff]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute -top-40 left-1/2 w-96 h-96 rounded-full bg-gold/5 blur-3xl -translate-x-1/2" />
 
@@ -625,7 +623,7 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="text-gold text-xs font-golos font-semibold uppercase tracking-[0.25em]">Контакты</span>
-              <h2 className="font-cormorant text-5xl md:text-6xl font-light text-foreground mt-2 mb-8">
+              <h2 className="font-cormorant text-5xl md:text-6xl font-light mt-2 mb-8 text-slate-900">
                 Свяжитесь<br /><em className="text-gold not-italic">с нами</em>
               </h2>
 
@@ -665,13 +663,13 @@ export default function Index() {
             </div>
 
             <div className="bg-hotel-card border border-border rounded-2xl overflow-hidden h-80 flex items-center justify-center relative">
-              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-50" />
+              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-800" />
               <div className="text-center relative">
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
                 </div>
-                <div className="font-cormorant text-2xl font-semibold text-foreground bg-slate-400">AURA APART</div>
-                <div className="font-golos text-sm text-muted-foreground mt-1">Сочи, ул. Навагинская 11Б</div>
+                <div className="font-cormorant text-2xl font-semibold text-foreground bg-transparent">AURA APART</div>
+                <div className="font-golos text-sm text-muted-foreground mt-1 bg-transparent">Сочи, ул. Навагинская 11Б</div>
                 <button className="mt-4 text-xs font-golos font-medium text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold/10 transition-colors">
                   Открыть карту
                 </button>
@@ -682,14 +680,14 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-border py-8 bg-background">
+      <footer className="border-t border-border py-8 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="font-cormorant text-xl font-bold tracking-widest text-gold uppercase">
             AURA<span className="text-foreground mx-1">·</span>APART
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             {NAV_LINKS.map(l => (
-              <button key={l.href} onClick={() => scrollTo(l.href)} className="text-xs font-golos text-muted-foreground hover:text-foreground transition-colors">
+              <button className="text-xs font-golos hover:text-foreground transition-colors bg-transparent text-slate-900" key={l.href} onClick={() => scrollTo(l.href)} className="text-xs font-golos text-muted-foreground hover:text-foreground transition-colors">
                 {l.label}
               </button>
             ))}
