@@ -331,11 +331,11 @@ export default function Index() {
               </button>
             </div>
 
-            <div className="flex gap-8 mt-12 animate-fade-in-up-delay-3">
+            <div className="flex gap-4 sm:gap-8 mt-12 animate-fade-in-up-delay-3">
               {[['15+', 'Апартаментов'], ['4.9', 'Рейтинг'], ['2 000+', 'Гостей']].map(([n, l]) => (
                 <div key={l}>
-                  <div className="font-cormorant text-3xl font-bold text-gold">{n}</div>
-                  <div className="font-golos text-xs text-muted-foreground uppercase tracking-wider mt-0.5">{l}</div>
+                  <div className="font-cormorant text-2xl sm:text-3xl font-bold text-gold">{n}</div>
+                  <div className="font-golos text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mt-0.5">{l}</div>
                 </div>
               ))}
             </div>
@@ -610,7 +610,7 @@ export default function Index() {
                 ))}
               </div>
 
-              <div className="flex gap-3 mt-8">
+              <div className="flex flex-wrap gap-3 mt-8">
                 <a href="https://wa.me/79002379757" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors">
                   <Icon name="MessageCircle" size={15} />
                   WhatsApp
@@ -619,7 +619,7 @@ export default function Index() {
                   <Icon name="Send" size={15} />
                   Telegram
                 </a>
-                <a href="tel:+79002379757" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors">
+                <a href="tel:+79002379757" className="flex items-center gap-2 bg-[#FF6B00] text-white text-sm font-golos font-semibold px-4 py-2.5 rounded-full hover:bg-[#FF8C33] transition-colors w-full sm:w-auto justify-center sm:justify-start">
                   <Icon name="Phone" size={15} />
                   Позвонить
                 </a>
