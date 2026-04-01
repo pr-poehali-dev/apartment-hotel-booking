@@ -575,7 +575,7 @@ export default function Index() {
                 Что говорят <em className="text-gold not-italic">гости</em>
               </h2>
             </div>
-            <div className="flex items-center gap-3 border border-gold/30 rounded-2xl px-5 py-3 bg-slate-900">
+            <div className="flex items-center gap-3 border border-gold/30 rounded-2xl px-5 py-3 bg-slate-700">
               <div>
                 <div className="font-cormorant text-4xl font-bold text-gold">4.9</div>
                 <div className="flex gap-0.5 mt-1">
@@ -592,13 +592,13 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {REVIEWS.map((r, i) => (
-              <div key={i} className="border border-border rounded-2xl p-6 hover:border-gold/30 transition-all bg-slate-900">
+              <div key={i} className="border border-border rounded-2xl p-6 hover:border-gold/30 transition-all bg-slate-700">
                 <div className="flex gap-1 mb-4">
                   {[...Array(r.stars)].map((_, j) => (
                     <Icon key={j} name="Star" size={14} className="text-gold fill-current" />
                   ))}
                 </div>
-                <p className="font-golos text-sm text-muted-foreground leading-relaxed mb-5">"{r.text}"</p>
+                <p className="font-golos text-sm leading-relaxed mb-5 text-[#ffffff]">"{r.text}"</p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center font-golos text-xs font-bold text-gold">
                     {r.avatar}
@@ -663,7 +663,7 @@ export default function Index() {
             </div>
 
             <div className="bg-hotel-card border border-border rounded-2xl overflow-hidden h-80 flex items-center justify-center relative">
-              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-800" />
+              <div className="absolute inset-0 from-gold/5 to-cyan/5 bg-slate-400" />
               <div className="text-center relative">
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
