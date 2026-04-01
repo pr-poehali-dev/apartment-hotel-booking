@@ -302,7 +302,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
 
-        <div className="absolute top-1/4 right-1/4 w-px h-32 bg-gradient-to-b from-transparent via-gold to-transparent animate-pulse-glow opacity-60" />
+        <div className="absolute top-1/4 right-1/4 w-px h-32 from-transparent via-gold to-transparent animate-pulse-glow opacity-60 bg-transparent" />
         <div className="absolute bottom-1/3 right-1/3 w-24 h-px bg-gradient-to-r from-transparent via-cyan to-transparent animate-pulse-glow opacity-40" style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 right-16 w-2 h-2 rounded-full bg-gold animate-float opacity-70" />
         <div className="absolute top-1/3 right-48 w-1.5 h-1.5 rounded-full bg-cyan animate-float opacity-50" style={{ animationDelay: '2s' }} />
