@@ -582,7 +582,7 @@ export default function Index() {
       {/* CONTACTS */}
       <section id="contacts" className="py-24 relative overflow-hidden bg-[#ffffff]">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-        <div className="absolute -top-40 left-1/2 w-96 h-96 rounded-full bg-gold/5 blur-3xl -translate-x-1/2" />
+        <div className="absolute -top-40 left-1/2 w-96 h-96 rounded-full blur-3xl -translate-x-1/2 bg-[#ffffff]" />
 
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -626,7 +626,7 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="border border-gray-200 rounded-2xl overflow-hidden h-80 flex items-center justify-center relative bg-gray-50">
+            <div className="border border-gray-200 rounded-2xl overflow-hidden h-80 flex items-center justify-center relative bg-rose-50">
               <div className="text-center relative">
                 <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                   <Icon name="MapPin" size={28} className="text-gold" />
